@@ -707,25 +707,20 @@ def formulario_cotizacion(editar=None):
             "Problemática",
             value=editar["problematica"] if editar else ""
         )
-
-
-
-
-
-
-
-
         st.subheader("⏱️ Tiempo y Modalidad")
 
         total_horas = sum([s["horas"] for s in st.session_state["servicios"]])
         horas_por_jornada = st.number_input("Horas por jornada", min_value=1, value=8)
         dias_estimados = round(total_horas / horas_por_jornada, 2)
 
-        st.write(f"🔹 Total horas: {total_horas}")
-        st.write(f"🔹 Equivalente en jornadas de {horas_por_jornada}h: {dias_estimados} días")
+        sesiones = st.number_input("Número de sesiones", min_value=1, value=1)
+        modalidad = st.multiselect("Modalidad", ["Presencial", "Virtual"], default=["Presencial"])
 
-        sesiones = st.number_input("Número de sesiones / entrevistas", min_value=0, step=1)
-        modalidad = st.multiselect("Modalidad de sesiones", ["Remoto", "Presencial"])
+        requisitos_texto = st.text_area(
+            "Requisitos básicos para iniciar",
+            value=editar.get("requisitos_texto", "") if editar else ""
+        )
+        
 
 
 
@@ -821,3 +816,4 @@ def formulario_cotizacion(editar=None):
                 "usuario": usuario_actual,  # <-- guardamos el usuario
 
                     # 👇 aquí agregamos lo nuevo
+
