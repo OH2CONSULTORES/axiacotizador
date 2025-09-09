@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador de Consultoría</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>📄 Cotizaciones</h1>
+    <p>Gestiona tus propuestas comerciales</p>
+    <button id="nuevaCotizacion">➕ Nueva Cotización</button>
+  </header>
+
+  <main>
+    <!-- Formulario -->
+    <section id="formulario" class="oculto">
+      <h2>Crear / Editar Cotización</h2>
+      <form id="cotizacionForm">
+        <div class="campo">
+          <label for="numero">Número</label>
+          <input type="text" id="numero" name="numero" required>
+        </div>
+
+        <div class="campo">
+          <label for="cliente">Cliente</label>
+          <select id="cliente" name="cliente">
+            <option>Cliente A</option>
+            <option>Cliente B</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha">
+        </div>
+
+        <div class="campo">
+          <label for="problematica">Problemática</label>
+          <textarea id="problematica" name="problematica" rows="3"></textarea>
+        </div>
+
+        <h3>➕ Servicios</h3>
+        <div id="servicios"></div>
+        <button type="button" id="agregarServicio">Añadir Servicio</button>
+
+        <h3>📦 Entregables</h3>
+        <div id="entregables"></div>
+        <button type="button" id="agregarEntregable">Añadir Entregable</button>
+
+        <h3>📌 Condiciones de Pago</h3>
+        <textarea id="condiciones" name="condiciones" rows="5"></textarea>
+
+        <div class="acciones">
+          <button type="submit">✅ Guardar</button>
+          <button type="button" id="cancelar">❌ Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Lista de Cotizaciones -->
+    <section id="listaCotizaciones">
+      <h2>Historial de Cotizaciones</h2>
+      <div class="tabla">
+        <div class="fila cabecera">
+          <span>Número</span>
+          <span>Cliente</span>
+          <span>Fecha</span>
+          <span>Monto</span>
+          <span>Acciones</span>
+        </div>
+        <div class="fila">
+          <span>0001</span>
+          <span>Cliente A</span>
+          <span>06/09/2025</span>
+          <span>S/. 1,500</span>
+          <span><button>📄 PDF</button> <button>✏️ Editar</button></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Mostrar/ocultar formulario
+    const btnNueva = document.getElementById("nuevaCotizacion");
+    const form = document.getElementById("formulario");
+    const cancelar = document.getElementById("cancelar");
+
+    btnNueva.onclick = () => form.classList.remove("oculto");
+    cancelar.onclick = () => form.classList.add("oculto");
+  </script>
+</body>
+</html>
