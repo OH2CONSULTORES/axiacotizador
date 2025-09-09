@@ -130,23 +130,23 @@ else:
         dashboard_view()
 
     elif st.session_state["menu"] == "Clientes":
-from clientes import clientes_view
+        from clientes import clientes_view
         clientes_view()
 
     elif st.session_state["menu"] == "Cotizaciones":
-from cotizaciones import cotizaciones_view
+        from cotizaciones import cotizaciones_view
         cotizaciones_view()
 
     elif st.session_state["menu"] == "Contratos":
-from contratos import contratos_view
+        from contratos import contratos_view
         contratos_view()
 
     elif st.session_state["menu"] == "Proyectos":
-from proyectos import proyectos_view
+        from proyectos import proyectos_view
         proyectos_view()
 
     elif st.session_state["menu"] == "Finanzas":
-from finanzas import finanzas_view
+        from finanzas import finanzas_view
         finanzas_view()
 
     elif st.session_state["menu"] == "usuarios":
@@ -155,3 +155,4 @@ from finanzas import finanzas_view
         configuracion_empresa_view()
 
    
+
