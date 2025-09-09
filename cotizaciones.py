@@ -266,8 +266,8 @@ def generar_pdf(cotizacion):
         if descripcion:
             pdf.set_x(15)  # mueve un poco a la derecha
             escribir_texto_seguro(pdf, f"   {descripcion}")
-        
-        pdf.ln(2)  # espacio entre entregables
+
+    pdf.ln(2)  # espacio entre entregables
 
 
 
@@ -601,8 +601,8 @@ def cotizaciones_view():
         pdf.ln(-1)
 
     pdf.set_font("Arial", "", 11)
-    pdf.cell(0, 6, "Omer Himler Olortegui Haro", ln=True, align="C")
-    pdf.cell(0, 6, "Consultor", ln=True, align="C")
+    pdf.cell(0, 6, "Encargada del Área Comercial", ln=True, align="C")
+    pdf.cell(0, 6, "Lizeth M. Balboa Quichua", ln=True, align="C")
 
 
     # -------------------------------
@@ -819,4 +819,5 @@ def formulario_cotizacion(editar=None):
                 "estado": "Enviada",
                 "logo": empresa["logo"],
                 "usuario": usuario_actual,  # <-- guardamos el usuario
+
                     # 👇 aquí agregamos lo nuevo
