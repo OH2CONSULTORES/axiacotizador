@@ -3,6 +3,12 @@ from datetime import datetime
 import pandas as pd
 from login import login_view, admin_view
 from configuracion import configuracion_empresa_view
+from dashboard import dashboard_view
+from clientes import clientes_view
+from cotizaciones import cotizaciones_view
+from contratos import contratos_view
+from proyectos import proyectos_view
+from finanzas import finanzas_view
 
 # --- Configuración de página ---
 st.set_page_config(page_title="CRM- AXIA CONSULTORES", page_icon="imagen/LOGO CMYK.png", layout="wide")
@@ -125,34 +131,30 @@ else:
     st.markdown("---")
 
     # --- Menú de navegación ---
+    # --- Menú de navegación ---
     if st.session_state["menu"] == "Dashboard":
-        from dashboard import dashboard_view
         dashboard_view()
-
+    
     elif st.session_state["menu"] == "Clientes":
-        from clientes import clientes_view
         clientes_view()
-
+    
     elif st.session_state["menu"] == "Cotizaciones":
-        from cotizaciones import cotizaciones_view
         cotizaciones_view()
-
+    
     elif st.session_state["menu"] == "Contratos":
-        from contratos import contratos_view
         contratos_view()
-
+    
     elif st.session_state["menu"] == "Proyectos":
-        from proyectos import proyectos_view
         proyectos_view()
-
+    
     elif st.session_state["menu"] == "Finanzas":
-        from finanzas import finanzas_view
         finanzas_view()
-
+    
     elif st.session_state["menu"] == "usuarios":
         admin_view()
         # Dentro del menú de Configuración
         configuracion_empresa_view()
 
    
+
 
