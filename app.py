@@ -1,6 +1,8 @@
 import streamlit as st
 from datetime import datetime
 import pandas as pd
+
+# Importar vistas personalizadas
 from login import login_view, admin_view
 from configuracion import configuracion_empresa_view
 from dashboard import dashboard_view
@@ -9,7 +11,6 @@ from cotizaciones import cotizaciones_view
 from contratos import contratos_view
 from proyectos import proyectos_view
 from finanzas import finanzas_view
-
 # --- Configuración de página ---
 st.set_page_config(page_title="CRM- AXIA CONSULTORES", page_icon="imagen/LOGO CMYK.png", layout="wide")
 
@@ -156,5 +157,6 @@ else:
         configuracion_empresa_view()
 
    
+
 
 
